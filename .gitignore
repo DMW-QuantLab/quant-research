@@ -1,0 +1,27 @@
+# Environment
+.env
+.env.*
+
+# Data (never commit)
+data/raw/
+data/processed/
+*.parquet
+*.db
+*.sqlite
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+.pytest_cache/
+.venv/
+venv/
+
+# Results (reference in git, store externally)
+results/large_*
+experiments/**/data/*.parquet
+experiments/**/data/*.db

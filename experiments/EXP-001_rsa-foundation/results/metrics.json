@@ -1,0 +1,18 @@
+{
+  "experiment_id": "EXP-001",
+  "strategy": "rsa_foundation",
+  "run_date": null,
+  "dataset": null,
+  "status": "pending",
+  "parameters": {},
+  "performance": {
+    "sharpe_oos": null,
+    "sharpe_is": null,
+    "max_drawdown": null,
+    "brier_score": null,
+    "win_rate": null,
+    "total_trades": null
+  },
+  "decision": "pending",
+  "notes": "Phase 1 data collection not yet started"
+}

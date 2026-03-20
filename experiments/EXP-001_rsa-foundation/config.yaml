@@ -1,0 +1,31 @@
+# EXP-001 Configuration
+# All parameters here — no hardcodes in notebooks
+
+experiment_id: EXP-001
+strategy: rsa_foundation
+
+# Feasibility filter
+ps_threshold: 0.85
+ps_threshold_decay_alpha: 0.05   # Adjusted = 0.85 - α × ln(T_hours / 48)
+
+# Poisson model
+intensity_window_hours: 6
+gamma_prior_alpha: 1.0            # Will be updated from historical data
+gamma_prior_beta: 1.0
+
+# Slippage model
+gamma_price_impact: 0.003         # 3bp per 1% liquidity consumed
+max_liquidity_consumption: 0.15   # 15% of visible liquidity per bucket
+
+# Kelly
+kelly_fraction: 0.25              # Quarter-Kelly
+max_position_pct_nav: 0.30
+
+# Fees
+taker_fee_bps: 2
+
+# Data
+backtest_start: '2024-06-01'
+backtest_end:   '2024-12-01'
+oos_split_date: '2024-10-01'
+

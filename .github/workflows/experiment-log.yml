@@ -1,0 +1,18 @@
+name: Experiment Log
+on:
+  push:
+    paths: ['experiments/**/metrics.json']
+jobs:
+  update-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyyaml
+      - run: python scripts/update_experiment_registry.py || echo 'Registry script not yet implemented'
+      - run: |
+          git config user.email 'actions@github.com'
+          git config user.name 'GitHub Actions'
+          git add docs/experiment_registry.md || true
+          git commit -m 'chore: update experiment registry' || true
+          git push || true
+

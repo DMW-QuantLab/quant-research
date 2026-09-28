@@ -4,7 +4,7 @@
 experiment_id: EXP-001
 strategy: rsa_foundation
 
-# Feasibility filter
+# Feasibility filter — hard safety ceiling; independent of the fee check below
 ps_threshold: 0.85
 ps_threshold_decay_alpha: 0.05   # Adjusted = 0.85 - α × ln(T_hours / 48)
 
@@ -21,11 +21,12 @@ max_liquidity_consumption: 0.15   # 15% of visible liquidity per bucket
 kelly_fraction: 0.25              # Quarter-Kelly
 max_position_pct_nav: 0.30
 
-# Fees
-taker_fee_bps: 2
+# Fees — Polymarket Fee Structure V2 (effective 2026-03-30, verified 2026-09-19)
+# fee = shares × taker_rate × price × (1 - price). See bots/rsa_bot/fees.py
+fee_category: culture
+taker_rate: 0.05
 
 # Data
 backtest_start: '2024-06-01'
 backtest_end:   '2024-12-01'
 oos_split_date: '2024-10-01'
-
